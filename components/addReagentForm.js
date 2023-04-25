@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Amplify, API, graphqlOperation } from 'aws-amplify';
+import { Amplify, API, graphqlOperation, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
 
@@ -10,14 +10,16 @@ const AddReagentForm = () => {
         user: "",
         name: "",
         qualityControlInterval: ""
-    })
+    });
 
     const qualityControlIntervalOptions = ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]
-    //UseEffect to grab the user id
 
-    function changeQualityControlInterval(){
-        setReagent
-    }
+    //Get user id
+    useEffect(() => {
+        const userInfo = Auth.currentUserInfo();
+        const userID = userInfo.id;
+        setReagent({...reagent, user: uerserID})
+    }, []);
 
     function handleSubmit(){
         const reagentParams = {
