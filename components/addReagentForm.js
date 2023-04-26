@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Amplify, API, graphqlOperation, Auth } from 'aws-amplify';
+import { API, graphqlOperation, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
 
