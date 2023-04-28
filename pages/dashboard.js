@@ -1,4 +1,5 @@
 import { withAuthenticator } from "@aws-amplify/ui-react";
+import {AddReagentForm} from "../components/addReagentForm";
 // Dashboard page
 // Sidebar: different links for the app (reagents, quality control, expiring reagents, etc.)
 // Main: Status tiles at the top of the page (needs qc, expiring reagents). Below tiles is a table 
@@ -11,6 +12,7 @@ function Dashboard({ signOut, user, renderedAt }) {
           <button onClick={signOut}>Sign out</button>
         </div>
         <p>This page was server-side rendered on {renderedAt}.</p>
+        <AddReagentForm/>
       </div>
     );
   }

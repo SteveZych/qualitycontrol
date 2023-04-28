@@ -10,6 +10,11 @@
       "StackName": "amplify-qualitycontrol-dev-193433",
       "StackId": "arn:aws:cloudformation:us-east-1:857913566937:stack/amplify-qualitycontrol-dev-193433/81cf4930-df1b-11ed-94cd-0a36ac28281d",
       "AmplifyAppId": "d2aiq53s9swuog"
+    },
+    "categories": {
+      "auth": {
+        "qualitycontrol47b0ef58": {}
+      }
     }
   }
 }

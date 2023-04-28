@@ -1,23 +1,25 @@
 import React, {useState, useEffect} from 'react';
-import { Amplify, API, graphqlOperation } from 'aws-amplify';
+import { API, graphqlOperation, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
-function getServerSideProps(){
 
-
-    return {props: {data}}
-}
-
-
-const AddReagentForm = (props) => {
+const AddReagentForm = () => {
 
     //State to keep track of the form
     const [reagent, setReagent] = useState({
-        reagentName: "",
+        user: "",
+        name: "",
         qualityControlInterval: ""
-    })
+    });
 
-    //UseEffect to grab the user id
+    const qualityControlIntervalOptions = ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]
+
+    //Get user ids
+    useEffect(() => {
+        const userInfo = Auth.currentUserInfo();
+        const userID = userInfo.id;
+        setReagent({...reagent, user: uerserID})
+    }, []);
 
     function handleSubmit(){
         const reagentParams = {
@@ -25,7 +27,6 @@ const AddReagentForm = (props) => {
         };
         
         const result = await API.graphql(graphqlOperation(createReagent, reagentParams));
-        const post = result.data.createReagent;
         
     }
 
@@ -37,22 +38,18 @@ const AddReagentForm = (props) => {
                     <p><input
                         name="reagentName"
                         type="text"
-                        value={reagent.reagentName}
+                        value={reagent.name}
                         placeholder="Reagent Name"
-                        onChange={(e) => setReagent({ ...reagent, reagentName: e.target.value })}
+                        onChange={(e) => setReagent({ ...reagent, name: e.target.value })}
                         required
                     /></p>
                 </div>
-                <div className="qualityControlInterval-form">
-                    <p><label htmlFor="qualityControlInterval">Quality Control Interval</label></p>
-                    <p><input
-                        name="qualityControlInterval"
-                        type="text"
-                        value={reagent.qualityControlInterval}
-                        placeholder="Quality Control Interval"
-                        onChange={(e) => setReagent({ ...reagent, qualityControlInterval: e.target.value })}
-                        required
-                    /></p>
+                <div>
+                    <select onChange={(e) => setReagent({ ...reagent, qualityControlInterval: e.target.value })}>
+                        {qualityControlIntervalOptions.map((option, index) =>{
+                            return <option key={index}>{option}</option>
+                        })}
+                    </select>
                 </div>
             </form>
         </div>
