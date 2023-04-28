@@ -14,7 +14,7 @@ const AddReagentForm = () => {
 
     const qualityControlIntervalOptions = ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]
 
-    //Get user id
+    //Get user ids
     useEffect(() => {
         const userInfo = Auth.currentUserInfo();
         const userID = userInfo.id;
