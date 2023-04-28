@@ -15,18 +15,18 @@ const AddReagentForm = () => {
     const qualityControlIntervalOptions = ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]
 
     //Get user ids
-    useEffect(() => {
-        const userInfo = Auth.currentUserInfo();
-        const userID = userInfo.id;
-        setReagent({...reagent, user: uerserID})
-    }, []);
+    // useEffect(() => {
+    //     const userInfo = Auth.currentUserInfo();
+    //     const userID = userInfo.id;
+    //     setReagent({...reagent, user: uerserID})
+    // }, []);
 
     function handleSubmit(){
         const reagentParams = {
             input: reagent,
         };
         
-        const result = await API.graphql(graphqlOperation(createReagent, reagentParams));
+        // const result = await API.graphql(graphqlOperation(createReagent, reagentParams));
         
     }
 
