@@ -1,5 +1,5 @@
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import {AddReagentForm} from "../components/addReagentForm";
+import AddReagentForm from "../components/addReagentForm";
 // Dashboard page
 // Sidebar: different links for the app (reagents, quality control, expiring reagents, etc.)
 // Main: Status tiles at the top of the page (needs qc, expiring reagents). Below tiles is a table 
