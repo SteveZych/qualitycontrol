@@ -1,13 +1,24 @@
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import AddReagentForm from "../components/addReagentForm";
+import {Auth} from 'aws-amplify';
+import React, {useState, useEffect} from 'react';
 // Dashboard page
 // Sidebar: different links for the app (reagents, quality control, expiring reagents, etc.)
 // Main: Status tiles at the top of the page (needs qc, expiring reagents). Below tiles is a table 
 // log of transactions of reagents
 function Dashboard({ signOut, user, renderedAt }) {
+
+  const [userid, setUserid] = useState(); 
+
+  useEffect(() => {
+        const userInfo = Auth.currentUserInfo()
+          .then(user => setUserid(user.id))
+          .catch(err => console.log(err));
+    }, []);
+
     return (
       <div style={{ padding: 50 }}>
-        <h1>Logged in as {user.username}.</h1>
+        <h1>Logged in as {user.username} {userid}.</h1>
         <div>
           <button onClick={signOut}>Sign out</button>
         </div>

@@ -32,7 +32,7 @@ const AddReagentForm = () => {
 
     return(
         <div>
-            <form className="" onsSubmit={handleSubmit}>
+            <form className="" onSubmit={handleSubmit}>
                 <div className="reagentName-form">
                     <p><label htmlFor="reagentName">Reagent Name</label></p>
                     <p><input
