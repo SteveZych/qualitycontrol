@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { API, graphqlOperation, Auth } from 'aws-amplify';
+import {createReagent} from '../src/graphql/queries';
 import awsconfig from '../src/aws-exports';
 
 
@@ -7,26 +8,18 @@ const AddReagentForm = () => {
 
     //State to keep track of the form
     const [reagent, setReagent] = useState({
-        user: "",
         name: "",
         qualityControlInterval: ""
     });
 
     const qualityControlIntervalOptions = ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]
 
-    //Get user ids
-    // useEffect(() => {
-    //     const userInfo = Auth.currentUserInfo();
-    //     const userID = userInfo.id;
-    //     setReagent({...reagent, user: uerserID})
-    // }, []);
-
     function handleSubmit(){
         const reagentParams = {
             input: reagent,
         };
         
-        // const result = await API.graphql(graphqlOperation(createReagent, reagentParams));
+        const result = await API.graphql(graphqlOperation(createReagent, reagentParams));
         
     }
 

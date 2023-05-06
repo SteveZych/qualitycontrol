@@ -5,22 +5,17 @@ import {listReagents} from '../src/graphql/queries'
 
 function Reagents(){
 
-    const []
-
     useEffect(() => {
-        //feteches userID from aws
-        const userID = Auth.currentUserInfo()
-          .then(user => user.id)
-          .catch(err => console.log(err));
-
         //fetech existing reagents to populate table
-        
+        const currentReagents = await API.graphql(graphqlOperation(listReagents));
     }, []);
 
     return(
         <div>
             <AddReagentForm/>
             {/* {Table of existing reagents. Able to modify and delete. } */}
+            <table>
+            </table>
         </div>
     );
 }
