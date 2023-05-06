@@ -2,10 +2,9 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateReagent = /* GraphQL */ `
-  subscription OnCreateReagent {
-    onCreateReagent {
+  subscription OnCreateReagent($owner: String) {
+    onCreateReagent(owner: $owner) {
       id
-      user
       name
       qualityControlInterval
       item {
@@ -17,19 +16,20 @@ export const onCreateReagent = /* GraphQL */ `
           quantity
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateReagent = /* GraphQL */ `
-  subscription OnUpdateReagent {
-    onUpdateReagent {
+  subscription OnUpdateReagent($owner: String) {
+    onUpdateReagent(owner: $owner) {
       id
-      user
       name
       qualityControlInterval
       item {
@@ -41,19 +41,20 @@ export const onUpdateReagent = /* GraphQL */ `
           quantity
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteReagent = /* GraphQL */ `
-  subscription OnDeleteReagent {
-    onDeleteReagent {
+  subscription OnDeleteReagent($owner: String) {
+    onDeleteReagent(owner: $owner) {
       id
-      user
       name
       qualityControlInterval
       item {
@@ -65,22 +66,23 @@ export const onDeleteReagent = /* GraphQL */ `
           quantity
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onCreateItem = /* GraphQL */ `
-  subscription OnCreateItem {
-    onCreateItem {
+  subscription OnCreateItem($owner: String) {
+    onCreateItem(owner: $owner) {
       id
       reagentID
       reagent {
         id
-        user
         name
         qualityControlInterval
         item {
@@ -88,6 +90,7 @@ export const onCreateItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       expirationDate
       receivedDate
@@ -102,6 +105,7 @@ export const onCreateItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -114,22 +118,23 @@ export const onCreateItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateItem = /* GraphQL */ `
-  subscription OnUpdateItem {
-    onUpdateItem {
+  subscription OnUpdateItem($owner: String) {
+    onUpdateItem(owner: $owner) {
       id
       reagentID
       reagent {
         id
-        user
         name
         qualityControlInterval
         item {
@@ -137,6 +142,7 @@ export const onUpdateItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       expirationDate
       receivedDate
@@ -151,6 +157,7 @@ export const onUpdateItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -163,22 +170,23 @@ export const onUpdateItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteItem = /* GraphQL */ `
-  subscription OnDeleteItem {
-    onDeleteItem {
+  subscription OnDeleteItem($owner: String) {
+    onDeleteItem(owner: $owner) {
       id
       reagentID
       reagent {
         id
-        user
         name
         qualityControlInterval
         item {
@@ -186,6 +194,7 @@ export const onDeleteItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       expirationDate
       receivedDate
@@ -200,6 +209,7 @@ export const onDeleteItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -212,17 +222,19 @@ export const onDeleteItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onCreateUpdatedItem = /* GraphQL */ `
-  subscription OnCreateUpdatedItem {
-    onCreateUpdatedItem {
+  subscription OnCreateUpdatedItem($owner: String) {
+    onCreateUpdatedItem(owner: $owner) {
       id
       itemID
       addedOrRemoved
@@ -231,12 +243,13 @@ export const onCreateUpdatedItem = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateUpdatedItem = /* GraphQL */ `
-  subscription OnUpdateUpdatedItem {
-    onUpdateUpdatedItem {
+  subscription OnUpdateUpdatedItem($owner: String) {
+    onUpdateUpdatedItem(owner: $owner) {
       id
       itemID
       addedOrRemoved
@@ -245,12 +258,13 @@ export const onUpdateUpdatedItem = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteUpdatedItem = /* GraphQL */ `
-  subscription OnDeleteUpdatedItem {
-    onDeleteUpdatedItem {
+  subscription OnDeleteUpdatedItem($owner: String) {
+    onDeleteUpdatedItem(owner: $owner) {
       id
       itemID
       addedOrRemoved
@@ -259,12 +273,13 @@ export const onDeleteUpdatedItem = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onCreateQualityControl = /* GraphQL */ `
-  subscription OnCreateQualityControl {
-    onCreateQualityControl {
+  subscription OnCreateQualityControl($owner: String) {
+    onCreateQualityControl(owner: $owner) {
       id
       itemID
       datePerformed
@@ -272,12 +287,13 @@ export const onCreateQualityControl = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateQualityControl = /* GraphQL */ `
-  subscription OnUpdateQualityControl {
-    onUpdateQualityControl {
+  subscription OnUpdateQualityControl($owner: String) {
+    onUpdateQualityControl(owner: $owner) {
       id
       itemID
       datePerformed
@@ -285,12 +301,13 @@ export const onUpdateQualityControl = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteQualityControl = /* GraphQL */ `
-  subscription OnDeleteQualityControl {
-    onDeleteQualityControl {
+  subscription OnDeleteQualityControl($owner: String) {
+    onDeleteQualityControl(owner: $owner) {
       id
       itemID
       datePerformed
@@ -298,6 +315,7 @@ export const onDeleteQualityControl = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;

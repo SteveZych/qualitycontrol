@@ -5,7 +5,6 @@ export const getReagent = /* GraphQL */ `
   query GetReagent($id: ID!) {
     getReagent(id: $id) {
       id
-      user
       name
       qualityControlInterval
       item {
@@ -17,11 +16,13 @@ export const getReagent = /* GraphQL */ `
           quantity
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -34,7 +35,6 @@ export const listReagents = /* GraphQL */ `
     listReagents(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        user
         name
         qualityControlInterval
         item {
@@ -42,6 +42,7 @@ export const listReagents = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }
@@ -54,7 +55,6 @@ export const getItem = /* GraphQL */ `
       reagentID
       reagent {
         id
-        user
         name
         qualityControlInterval
         item {
@@ -62,6 +62,7 @@ export const getItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       expirationDate
       receivedDate
@@ -76,6 +77,7 @@ export const getItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -88,11 +90,13 @@ export const getItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -108,11 +112,11 @@ export const listItems = /* GraphQL */ `
         reagentID
         reagent {
           id
-          user
           name
           qualityControlInterval
           createdAt
           updatedAt
+          owner
         }
         expirationDate
         receivedDate
@@ -125,6 +129,7 @@ export const listItems = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }
@@ -141,6 +146,7 @@ export const getUpdatedItem = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -160,6 +166,7 @@ export const listUpdatedItems = /* GraphQL */ `
         comment
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }
@@ -175,6 +182,7 @@ export const getQualityControl = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -193,6 +201,7 @@ export const listQualityControls = /* GraphQL */ `
         comment
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }

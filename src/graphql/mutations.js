@@ -8,7 +8,6 @@ export const createReagent = /* GraphQL */ `
   ) {
     createReagent(input: $input, condition: $condition) {
       id
-      user
       name
       qualityControlInterval
       item {
@@ -20,11 +19,13 @@ export const createReagent = /* GraphQL */ `
           quantity
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -35,7 +36,6 @@ export const updateReagent = /* GraphQL */ `
   ) {
     updateReagent(input: $input, condition: $condition) {
       id
-      user
       name
       qualityControlInterval
       item {
@@ -47,11 +47,13 @@ export const updateReagent = /* GraphQL */ `
           quantity
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -62,7 +64,6 @@ export const deleteReagent = /* GraphQL */ `
   ) {
     deleteReagent(input: $input, condition: $condition) {
       id
-      user
       name
       qualityControlInterval
       item {
@@ -74,11 +75,13 @@ export const deleteReagent = /* GraphQL */ `
           quantity
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -92,7 +95,6 @@ export const createItem = /* GraphQL */ `
       reagentID
       reagent {
         id
-        user
         name
         qualityControlInterval
         item {
@@ -100,6 +102,7 @@ export const createItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       expirationDate
       receivedDate
@@ -114,6 +117,7 @@ export const createItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -126,11 +130,13 @@ export const createItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -144,7 +150,6 @@ export const updateItem = /* GraphQL */ `
       reagentID
       reagent {
         id
-        user
         name
         qualityControlInterval
         item {
@@ -152,6 +157,7 @@ export const updateItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       expirationDate
       receivedDate
@@ -166,6 +172,7 @@ export const updateItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -178,11 +185,13 @@ export const updateItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -196,7 +205,6 @@ export const deleteItem = /* GraphQL */ `
       reagentID
       reagent {
         id
-        user
         name
         qualityControlInterval
         item {
@@ -204,6 +212,7 @@ export const deleteItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       expirationDate
       receivedDate
@@ -218,6 +227,7 @@ export const deleteItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -230,11 +240,13 @@ export const deleteItem = /* GraphQL */ `
           comment
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -252,6 +264,7 @@ export const createUpdatedItem = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -269,6 +282,7 @@ export const updateUpdatedItem = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -286,6 +300,7 @@ export const deleteUpdatedItem = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -302,6 +317,7 @@ export const createQualityControl = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -318,6 +334,7 @@ export const updateQualityControl = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -334,6 +351,7 @@ export const deleteQualityControl = /* GraphQL */ `
       comment
       createdAt
       updatedAt
+      owner
     }
   }
 `;
