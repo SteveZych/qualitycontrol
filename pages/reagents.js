@@ -6,9 +6,13 @@ import {listReagents} from '../src/graphql/queries'
 function Reagents(){
 
     useEffect(() => {
-        //fetech existing reagents to populate table
-        const currentReagents = await API.graphql(graphqlOperation(listReagents));
-    }, []);
+        async function fetchdata(){
+            //fetech existing reagents to populate table
+            const currentReagents = await API.graphql(graphqlOperation(listReagents));
+            console.log(currentReagents);
+        }
+            fetchdata();
+        }, []);
 
     return(
         <div>

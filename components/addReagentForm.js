@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { API, graphqlOperation, Auth } from 'aws-amplify';
-import {createReagent} from '../src/graphql/queries';
+import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
+import {createReagent} from '../src/graphql/mutations';
 import awsconfig from '../src/aws-exports';
 
 
@@ -12,14 +13,21 @@ const AddReagentForm = () => {
         qualityControlInterval: ""
     });
 
-    const qualityControlIntervalOptions = ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]
+    const qualityControlIntervalOptions = ["Once","Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]
 
-    function handleSubmit(){
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         const reagentParams = {
             input: reagent,
         };
+
+        const result = await API.graphql({
+            query: createReagent,
+            variables: { reagentParams },
+            authMode: GRAPHQL_AUTH_MODE.AWS_IAM
+          });
         
-        const result = await API.graphql(graphqlOperation(createReagent, reagentParams));
+        // const result = await API.graphql(graphqlOperation(createReagent, reagentParams));
         
     }
 
@@ -43,6 +51,9 @@ const AddReagentForm = () => {
                             return <option key={index}>{option}</option>
                         })}
                     </select>
+                </div>
+                <div className="submit-form">
+                    <button className="btn" type="submit">Submit</button>
                 </div>
             </form>
         </div>

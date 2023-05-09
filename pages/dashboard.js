@@ -10,7 +10,7 @@ function Dashboard({ signOut, user, renderedAt }) {
 
     return (
       <div style={{ padding: 50 }}>
-        <h1>Logged in as {user.username} {userid}.</h1>
+        <h1>Logged in as {user.username}.</h1>
         <div>
           <button onClick={signOut}>Sign out</button>
         </div>
