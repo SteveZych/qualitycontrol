@@ -21,11 +21,17 @@ const AddReagentForm = () => {
             input: reagent,
         };
 
-        const result = await API.graphql({
-            query: createReagent,
-            variables: { reagentParams },
-            authMode: GRAPHQL_AUTH_MODE.AWS_IAM
-          });
+        try{
+            await API.graphql(graphqlOperation(createReagent, reagentParams));
+        }catch(err){
+            console.log(err);
+        }
+
+        // const result = await API.graphql({
+        //     query: createReagent,
+        //     variables: { reagentParams },
+        //     authMode: GRAPHQL_AUTH_MODE.AWS_IAM
+        //   });
         
         // const result = await API.graphql(graphqlOperation(createReagent, reagentParams));
         
