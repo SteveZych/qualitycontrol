@@ -1,0 +1,82 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-qualitycontrol-dev-193433-authRole",
+      "UnauthRoleArn": "arn:aws:iam::857913566937:role/amplify-qualitycontrol-dev-193433-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::857913566937:role/amplify-qualitycontrol-dev-193433-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-qualitycontrol-dev-193433-deployment",
+      "UnauthRoleName": "amplify-qualitycontrol-dev-193433-unauthRole",
+      "StackName": "amplify-qualitycontrol-dev-193433",
+      "StackId": "arn:aws:cloudformation:us-east-1:857913566937:stack/amplify-qualitycontrol-dev-193433/81cf4930-df1b-11ed-94cd-0a36ac28281d",
+      "AmplifyAppId": "d2aiq53s9swuog"
+    }
+  },
+  "api": {
+    "qualitycontrol": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "hykvmmoxanfuxc5hrg5yho27eu",
+        "GraphQLAPIEndpointOutput": "https://tcw3qdr23jczvl5fxysz5et5au.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-plr3y67dencdbfldlk6ezchst4"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-qualitycontrol-dev-193433-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiqualitycontrol"
+      },
+      "lastPushTimeStamp": "2023-04-23T20:16:00.439Z",
+      "lastPushDirHash": "XBFmNAs1zoResRmyRN29HxCZUic="
+    }
+  },
+  "auth": {
+    "qualitycontrol47b0ef58": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-qualitycontrol-dev-193433-deployment/amplify-cfn-templates/auth/qualitycontrol47b0ef58-cloudformation-template.json",
+        "logicalId": "authqualitycontrol47b0ef58"
+      },
+      "lastPushTimeStamp": "2023-04-23T20:16:00.718Z",
+      "output": {
+        "UserPoolId": "us-east-1_FpkNRzUVR",
+        "AppClientIDWeb": "13vm5a0dr0oe4nb2odk3ef9ov",
+        "AppClientID": "7jsri29fdgb3dljfmk7jdplkqo",
+        "IdentityPoolId": "us-east-1:98c427c2-507e-4175-bde6-b311bfb1cc7a",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:857913566937:userpool/us-east-1_FpkNRzUVR",
+        "IdentityPoolName": "qualitycontrol47b0ef58_identitypool_47b0ef58__dev",
+        "UserPoolName": "qualitycontrol47b0ef58_userpool_47b0ef58"
+      },
+      "lastPushDirHash": "y9iJoDxSmFJ1vCUHrv/1kasyMSk="
+    }
+  }
+}
